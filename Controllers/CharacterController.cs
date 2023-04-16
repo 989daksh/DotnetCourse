@@ -53,6 +53,7 @@ namespace DotnetCourse.Controllers
           var response = await _characterService.UpdateCharacter(updatedCharacter); //added to show error and not OK(200)
           if(response.Data == null){
             return NotFound(response);
+            
           }
             return Ok(response);
         }
