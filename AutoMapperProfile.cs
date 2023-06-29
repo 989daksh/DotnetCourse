@@ -14,6 +14,8 @@ namespace DotnetCourse
             CreateMap<Character, GetCharacterDto>();
             CreateMap<AddCharacterDto, Character>();
             CreateMap<UpdateCharacterDto, Character>();
+            CreateMap<Weapon, GetWeaponDto>();
+            CreateMap<Skill, GetSkillDto>();
 
         }
     }

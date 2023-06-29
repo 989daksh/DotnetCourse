@@ -5,9 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using DotnetCourse.Services.CharacterService;
 using DotnetCourse.DTOs.Characters;
+using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
+using DotnetCourse.DTOs;
 
 namespace DotnetCourse.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class CharacterController : ControllerBase
@@ -25,6 +29,7 @@ namespace DotnetCourse.Controllers
         [HttpGet]
         [Route("GetAll")]
         public async Task<ActionResult<ServiceResponse<List<GetCharacterDto>>>> Get(){
+            // int userId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)!.Value); 
             return Ok(await _characterService.GetAllCharacters());
         }
 
@@ -56,6 +61,12 @@ namespace DotnetCourse.Controllers
             
           }
             return Ok(response);
+        }
+
+        [HttpPost("Skill")]
+        public async Task<ActionResult<ServiceResponse<GetCharacterDto>>> AddCharacterSkill(AddCharacterSkillDto newcharacterSkill)
+        {
+            return Ok(await _characterService.AddCharacterSkill(newcharacterSkill));
         }
     }
 }

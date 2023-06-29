@@ -4,6 +4,7 @@ using DotnetCourse.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DotnetCourse.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230629125545_Skills")]
+    partial class Skills
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,26 +95,6 @@ namespace DotnetCourse.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Skills");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Damage = 30,
-                            Name = "Fireball"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Damage = 40,
-                            Name = "Throwball"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Damage = 50,
-                            Name = "Jump"
-                        });
                 });
 
             modelBuilder.Entity("DotnetCourse.Models.User", b =>

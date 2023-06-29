@@ -14,5 +14,7 @@ namespace DotnetCourse.DTOs.Characters
         public int Defence { get; set; } = 9;
         public int Intelligence { get; set; } = 100;
         public RolePlayingClass Class { get; set; } = RolePlayingClass.King;
+        public GetWeaponDto? Weapon { get; set; }
+        public List<GetSkillDto>? Skills { get; set; }
     }
 }

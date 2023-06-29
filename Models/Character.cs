@@ -14,5 +14,8 @@ namespace DotnetCourse.Models
         public int Defence { get; set; } = 9;
         public int Intelligence { get; set; } = 100;
         public RolePlayingClass Class { get; set; } = RolePlayingClass.King;
+        public User? Users { get; set; }
+        public Weapon? Weapon { get; set; }
+        public List<Skill>? Skills { get; set; }
     }
 }
