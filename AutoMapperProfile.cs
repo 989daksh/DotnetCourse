@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using DotnetCourse.DTOs.Characters;
+using DotnetCourse.DTOs.Fight;
 
 namespace DotnetCourse
 {
@@ -16,7 +17,7 @@ namespace DotnetCourse
             CreateMap<UpdateCharacterDto, Character>();
             CreateMap<Weapon, GetWeaponDto>();
             CreateMap<Skill, GetSkillDto>();
-
+            CreateMap<Character, HighScoreDto>();
         }
     }
 }
